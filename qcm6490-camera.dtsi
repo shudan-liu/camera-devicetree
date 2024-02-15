@@ -483,7 +483,7 @@
 		operating-points-v2 = <&csiphy0_opp_table>;
 		refgen-supply = <&refgen>;
 		csi-vdd-1p2-supply = <&vreg_l6b_1p2>;
-		csi-vdd-0p9-supply = <&vreg_l10c_0p8>;
+		csi-vdd-0p9-supply = <&vreg_l10c_0p88>;
 		regulator-names = "refgen", "csi-vdd-1p2",
 			"csi-vdd-0p9";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
@@ -530,7 +530,7 @@
 		operating-points-v2 = <&csiphy1_opp_table>;
 		refgen-supply = <&refgen>;
 		csi-vdd-1p2-supply = <&vreg_l6b_1p2>;
-		csi-vdd-0p9-supply = <&vreg_l10c_0p8>;
+		csi-vdd-0p9-supply = <&vreg_l10c_0p88>;
 		regulator-names = "refgen", "csi-vdd-1p2",
 			"csi-vdd-0p9";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
@@ -577,7 +577,7 @@
 		refgen-supply = <&refgen>;
 		operating-points-v2 = <&csiphy2_opp_table>;
 		csi-vdd-1p2-supply = <&vreg_l6b_1p2>;
-		csi-vdd-0p9-supply = <&vreg_l10c_0p8>;
+		csi-vdd-0p9-supply = <&vreg_l10c_0p88>;
 		regulator-names = "refgen", "csi-vdd-1p2",
 			"csi-vdd-0p9";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
@@ -624,7 +624,7 @@
 		refgen-supply = <&refgen>;
 		operating-points-v2 = <&csiphy3_opp_table>;
 		csi-vdd-1p2-supply = <&vreg_l6b_1p2>;
-		csi-vdd-0p9-supply = <&vreg_l10c_0p8>;
+		csi-vdd-0p9-supply = <&vreg_l10c_0p88>;
 		regulator-names = "refgen", "csi-vdd-1p2",
 			"csi-vdd-0p9";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
@@ -671,7 +671,7 @@
 		refgen-supply = <&refgen>;
 		operating-points-v2 = <&csiphy4_opp_table>;
 		csi-vdd-1p2-supply = <&vreg_l6b_1p2>;
-		csi-vdd-0p9-supply = <&vreg_l10c_0p8>;
+		csi-vdd-0p9-supply = <&vreg_l10c_0p88>;
 		regulator-names = "refgen", "csi-vdd-1p2",
 			"csi-vdd-0p9";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
