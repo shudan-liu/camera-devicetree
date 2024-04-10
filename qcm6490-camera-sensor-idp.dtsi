@@ -145,7 +145,7 @@
 		cam_vaf-supply = <&L7I>;
 		cam_v_custom1-supply = <&L5I>;
 		cam_vdig-supply = <&L1I>;
-		cam_bob-supply = <&vreg_bob>;
+		cam_bob-supply = <&vreg_bob_3p296>;
 		regulator-names = "cam_vio", "cam_vana", "cam_vaf", "cam_v_custom1",
 			"cam_vdig", "cam_bob";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
@@ -189,7 +189,7 @@
 		cam_vana-supply = <&L4I>;
 		cam_vaf-supply = <&L7I>;
 		cam_vdig-supply = <&L2I>;
-		cam_bob-supply = <&vreg_bob>;
+		cam_bob-supply = <&vreg_bob_3p296>;
 		regulator-names = "cam_vio", "cam_vana", "cam_vaf", "cam_vdig",
 			"cam_bob";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
@@ -389,7 +389,7 @@
 		cam_vana-supply = <&L6I>;
 		cam_vaf-supply = <&L7I>;
 		cam_vdig-supply = <&L2I>;
-		cam_bob-supply = <&vreg_bob>;
+		cam_bob-supply = <&vreg_bob_3p296>;
 		regulator-names = "cam_vio", "cam_vana", "cam_vaf", "cam_vdig",
 			"cam_bob";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
@@ -430,7 +430,7 @@
 		cam_vio-supply = <&L3J>;
 		cam_vana-supply = <&L5J>;
 		cam_vdig-supply = <&L1J>;
-		cam_bob-supply = <&vreg_bob>;
+		cam_bob-supply = <&vreg_bob_3p296>;
 		regulator-names = "cam_vio", "cam_vana", "cam_vdig",
 			"cam_bob";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
