@@ -1247,9 +1247,7 @@
 			compatible = "qcom,msm-cam-smmu-cb";
 			iommus = <&apps_smmu 0x3400 0x0020>,
 				<&apps_smmu 0x3420 0x0020>;
-			qcom,iommu-dma-addr-pool = <0x100000 0xffe00000>;
 			cam-smmu-label = "ife", "sfe";
-			qcom,iommu-faults = "stall-disable", "non-fatal";
 			multiple-client-devices;
 			dma-coherent;
 			ife_iova_mem_map: iova-mem-map {
@@ -1279,8 +1277,6 @@
 				<&apps_smmu 0x0CC0 0x480>;
 			cam-smmu-label = "icp";
 			qcom,iommu-faults = "stall-disable", "non-fatal";
-			iova-region-discard = <0xe0000000 0x800000>;
-			qcom,iommu-dma-addr-pool = <0x10c00000 0xee300000>;
 			dma-coherent;
 			icp_iova_mem_map: iova-mem-map {
 				iova-mem-region-shared {
@@ -1307,7 +1303,6 @@
 					iova-region-start = <0x10c00000>;
 					iova-region-len = <0xee300000>;
 					iova-region-id = <0x3>;
-					iova-region-discard = <0xe0000000 0x800000>;
 					status = "ok";
 				};
 
@@ -1328,8 +1323,6 @@
 			iommus = <&apps_smmu 0x0860 0x400>,
 				<&apps_smmu 0x0C60 0x400>;
 			cam-smmu-label = "rt-cdm";
-			qcom,iommu-faults = "stall-disable", "non-fatal";
-			qcom,iommu-dma-addr-pool = <0x100000 0xffe00000>;
 			dma-coherent;
 			multiple-client-devices;
 			rt_cdm_iova_mem_map: iova-mem-map {
@@ -1614,9 +1607,9 @@
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 		clock-names =
 			"cam_cc_cpas_ife_1_clk",
-			"cam_cc_ife_0_clk",
-			"cam_cc_ife_0_clk_src",
-			"cam_cc_ife_0_fast_ahb_clk";
+			"cam_cc_ife_1_clk",
+			"cam_cc_ife_1_clk_src",
+			"cam_cc_ife_1_fast_ahb_clk";
 		clocks =
 			<&camcc CAM_CC_CPAS_IFE_1_CLK>,
 			<&camcc CAM_CC_IFE_1_CLK>,
@@ -2225,6 +2218,7 @@
 		num-icp = <1>;
 		num-ipe = <1>;
 		icp_pc_en;
+		icp_use_pil;
 		status = "ok";
 	};
 
@@ -2352,7 +2346,8 @@
 			"cam_cc_fast_ahb_clk_src",
 			"cam_cc_cpas_fast_ahb_clk",
 			"cam_cc_camnoc_axi_clk_src",
-			"cam_cc_camnoc_axi_clk";
+			"cam_cc_camnoc_axi_clk",
+			"cam_cc_qdss_debug_xo_clk";
 		clocks =
 			<&gcc GCC_CAMERA_AHB_CLK>,
 			<&gcc GCC_CAMERA_HF_AXI_CLK>,
@@ -2363,13 +2358,17 @@
 			<&camcc CAM_CC_FAST_AHB_CLK_SRC>,
 			<&camcc CAM_CC_CPAS_FAST_AHB_CLK>,
 			<&camcc CAM_CC_CAMNOC_AXI_CLK_SRC>,
-			<&camcc CAM_CC_CAMNOC_AXI_CLK>;
+			<&camcc CAM_CC_CAMNOC_AXI_CLK>,
+			<&camcc CAM_CC_QDSS_DEBUG_XO_CLK>;
 		src-clock-name = "cam_cc_fast_ahb_clk_src";
 		clock-rates =
-			<0 0 0 0 0 0 0 0 0 0>,
-			<0 0 0 80000000 0 0 300000000 0 400000000 0>,
-			<0 0 0 80000000 0 0 400000000 0 400000000 0>;
+			<0 0 0 0 0 0 0 0 0 0 0>,
+			<0 0 0 80000000 0 0 300000000 0 400000000 0 0>,
+			<0 0 0 80000000 0 0 400000000 0 400000000 0 0>;
 		clock-cntl-level = "suspend", "svs_l1", "nominal";
+		clock-names-option = "cam_icp_clk";
+		clocks-option = <&camcc CAM_CC_ICP_CLK>;
+		clock-rates-option = <480000000>;
 		operating-points-v2 = <&cpas_opp_table>;
 		control-camnoc-axi-clk;
 		camnoc-bus-width = <32>;
