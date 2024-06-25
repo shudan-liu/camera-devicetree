@@ -597,8 +597,6 @@
 		reg = <0xacac000 0x400>,
 			<0xac11000 0x1000>;
 		reg-cam-base = <0xac000 0x11000>;
-		regulator-names = "refgen";
-		refgen-supply = <&refgen>;
 		operating-points-v2 = <&csiphy_tpg0_opp_table>;
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 		interrupt-names = "tpg0";
@@ -632,8 +630,6 @@
 		reg = <0xacad000 0x400>,
 			<0xac11000 0x1000>;
 		reg-cam-base = <0xad000 0x11000>;
-		regulator-names = "refgen";
-		refgen-supply = <&refgen>;
 		operating-points-v2 = <&csiphy_tpg1_opp_table>;
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 		interrupt-names = "tpg1";
@@ -667,8 +663,6 @@
 		reg = <0xacae000 0x400>,
 			<0xac11000 0x1000>;
 		reg-cam-base = <0xae000 0x11000>;
-		regulator-names = "refgen";
-		refgen-supply = <&refgen>;
 		operating-points-v2 = <&csiphy_tpg2_opp_table>;
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 		interrupt-names = "tpg2";
@@ -703,15 +697,14 @@
 		reg-cam-base = <0x9c000>;
 		interrupt-names = "CSIPHY0";
 		interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
-		refgen-supply = <&refgen>;
-		csi-vdd-1p2-supply = <&L1C>;
-		csi-vdd-0p9-supply = <&L4A>;
-		regulator-names = "refgen", "csi-vdd-1p2", "csi-vdd-0p9";
+		csi-vdd-1p2-supply = <&vreg_l1c>;
+		csi-vdd-0p9-supply = <&vreg_l4a>;
+		regulator-names = "csi-vdd-1p2", "csi-vdd-0p9";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <0 1140000 831000>;
-		rgltr-max-voltage = <0 1260000 920000>;
-		rgltr-load-current = <0 8900 15900>;
+		rgltr-min-voltage = <1140000 831000>;
+		rgltr-max-voltage = <1260000 920000>;
+		rgltr-load-current = <8900 15900>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy0_clk",
@@ -744,15 +737,14 @@
 		reg-cam-base = <0x9e000>;
 		interrupt-names = "CSIPHY1";
 		interrupts = <GIC_SPI 478 IRQ_TYPE_EDGE_RISING>;
-		refgen-supply = <&refgen>;
-		csi-vdd-1p2-supply = <&L1C>;
-		csi-vdd-0p9-supply = <&L4A>;
-		regulator-names = "refgen", "csi-vdd-1p2", "csi-vdd-0p9";
+		csi-vdd-1p2-supply = <&vreg_l1c>;
+		csi-vdd-0p9-supply = <&vreg_l4a>;
+		regulator-names = "csi-vdd-1p2", "csi-vdd-0p9";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <0 1140000 831000>;
-		rgltr-max-voltage = <0 1260000 920000>;
-		rgltr-load-current = <0 8900 15900>;
+		rgltr-min-voltage = <1140000 831000>;
+		rgltr-max-voltage = <1260000 920000>;
+		rgltr-load-current = <8900 15900>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy1_clk",
@@ -785,15 +777,14 @@
 		reg-cam-base = <0xa0000>;
 		interrupt-names = "CSIPHY2";
 		interrupts = <GIC_SPI 479 IRQ_TYPE_EDGE_RISING>;
-		refgen-supply = <&refgen>;
-		csi-vdd-1p2-supply = <&L1C>;
-		csi-vdd-0p9-supply = <&L4A>;
-		regulator-names = "refgen", "csi-vdd-1p2", "csi-vdd-0p9";
+		csi-vdd-1p2-supply = <&vreg_l1c>;
+		csi-vdd-0p9-supply = <&vreg_l4a>;
+		regulator-names = "csi-vdd-1p2", "csi-vdd-0p9";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <0 1140000 831000>;
-		rgltr-max-voltage = <0 1260000 920000>;
-		rgltr-load-current = <0 8900 15900>;
+		rgltr-min-voltage = <1140000 831000>;
+		rgltr-max-voltage = <1260000 920000>;
+		rgltr-load-current = <8900 15900>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy2_clk",
@@ -826,15 +817,14 @@
 		reg-cam-base = <0xa2000>;
 		interrupt-names = "CSIPHY3";
 		interrupts = <GIC_SPI 448 IRQ_TYPE_EDGE_RISING>;
-		refgen-supply = <&refgen>;
-		csi-vdd-1p2-supply = <&L1C>;
-		csi-vdd-0p9-supply = <&L4A>;
-		regulator-names = "refgen", "csi-vdd-1p2", "csi-vdd-0p9";
+		csi-vdd-1p2-supply = <&vreg_l1c>;
+		csi-vdd-0p9-supply = <&vreg_l4a>;
+		regulator-names = "csi-vdd-1p2", "csi-vdd-0p9";
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
 		rgltr-cntrl-support;
-		rgltr-min-voltage = <0 1140000 831000>;
-		rgltr-max-voltage = <0 1260000 920000>;
-		rgltr-load-current = <0 8900 15900>;
+		rgltr-min-voltage = <1140000 831000>;
+		rgltr-max-voltage = <1260000 920000>;
+		rgltr-load-current = <8900 15900>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy3_clk",
@@ -845,7 +835,7 @@
 			<&camcc CAM_CC_CSI3PHYTIMER_CLK_SRC>,
 			<&camcc CAM_CC_CSI3PHYTIMER_CLK>;
 		src-clock-name = "cphy_rx_clk_src";
-		clock-cntl-level = "lowsvs", "nominal";
+		clock-cntl-level = "lowsvs";
 		clock-rates =
 			<400000000 0 400000000 0>;
 		status = "ok";
