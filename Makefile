@@ -1,6 +1,6 @@
 %:
 	echo "Processing target $@"
-	${CC} -undef -x assembler-with-cpp $@.dtso -I ${CAMERA_INCLUDE} -I ${KERNEL_INCLUDE} -E -o $@.dts.preprocessed
+	${CC} -undef -x assembler-with-cpp $@.dtso -I ${KERNEL_INCLUDE} -E -o $@.dts.preprocessed
 	${DTC} -O dtb -o $@.dtbo $@.dts.preprocessed
 
 clean:
