@@ -589,13 +589,21 @@
 		status = "ok";
 	};
 
+	qcom,cam-i3c-id-table {
+		i3c-sensor-id-table = <0x1B0 0x0766>;
+		i3c-eeprom-id-table = <>;
+		i3c-actuator-id-table = <>;
+		i3c-ois-id-table = <>;
+		status = "disabled";
+	};
+
 	cam_csiphy_tpg13: qcom,tpg13@acac000 {
 		cell-index = <13>;
 		phy-id = <0>;
 		compatible = "qcom,cam-tpg1031";
 		reg-names = "tpg0", "cam_cpas_top";
-		reg = <0xacac000 0x400>,
-			<0xac11000 0x1000>;
+		reg = <0x0 0xacac000 0x0 0x400>,
+			<0x0 0xac11000 0x0 0x1000>;
 		reg-cam-base = <0xac000 0x11000>;
 		operating-points-v2 = <&csiphy_tpg0_opp_table>;
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
@@ -627,8 +635,8 @@
 		phy-id = <1>;
 		compatible = "qcom,cam-tpg1031";
 		reg-names = "tpg1", "cam_cpas_top";
-		reg = <0xacad000 0x400>,
-			<0xac11000 0x1000>;
+		reg = <0x0 0xacad000 0x0 0x400>,
+			<0x0 0xac11000 0x0 0x1000>;
 		reg-cam-base = <0xad000 0x11000>;
 		operating-points-v2 = <&csiphy_tpg1_opp_table>;
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
@@ -660,8 +668,8 @@
 		phy-id = <2>;
 		compatible = "qcom,cam-tpg1031";
 		reg-names = "tpg2", "cam_cpas_top";
-		reg = <0xacae000 0x400>,
-			<0xac11000 0x1000>;
+		reg = <0x0 0xacae000 0x0 0x400>,
+			<0x0 0xac11000 0x0 0x1000>;
 		reg-cam-base = <0xae000 0x11000>;
 		operating-points-v2 = <&csiphy_tpg2_opp_table>;
 		power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
@@ -691,7 +699,7 @@
 	cam_csiphy0: qcom,csiphy0@ac9c000 {
 		cell-index = <0>;
 		compatible = "qcom,csiphy-v1.3.0", "qcom,csiphy";
-		reg = <0x0ac9c000 0x2000>;
+		reg = <0x0 0x0ac9c000 0x0 0x2000>;
 		reg-names = "csiphy";
 		operating-points-v2 = <&csiphy0_opp_table>;
 		reg-cam-base = <0x9c000>;
@@ -731,7 +739,7 @@
 	cam_csiphy1: qcom,csiphy1@ac9e000 {
 		cell-index = <1>;
 		compatible = "qcom,csiphy-v1.3.0", "qcom,csiphy";
-		reg = <0xac9e000 0x2000>;
+		reg = <0x0 0xac9e000 0x0 0x2000>;
 		reg-names = "csiphy";
 		operating-points-v2 = <&csiphy1_opp_table>;
 		reg-cam-base = <0x9e000>;
@@ -771,7 +779,7 @@
 	cam_csiphy2: qcom,csiphy2@aca0000 {
 		cell-index = <2>;
 		compatible = "qcom,csiphy-v1.3.0", "qcom,csiphy";
-		reg = <0xaca0000 0x2000>;
+		reg = <0x0 0xaca0000 0x0 0x2000>;
 		reg-names = "csiphy";
 		operating-points-v2 = <&csiphy2_opp_table>;
 		reg-cam-base = <0xa0000>;
@@ -811,7 +819,7 @@
 	cam_csiphy3: qcom,csiphy3@aca2000 {
 		cell-index = <3>;
 		compatible = "qcom,csiphy-v1.3.0", "qcom,csiphy";
-		reg = <0xaca2000 0x2000>;
+		reg = <0x0 0xaca2000 0x0 0x2000>;
 		reg-names = "csiphy";
 		operating-points-v2 = <&csiphy3_opp_table>;
 		reg-cam-base = <0xa2000>;
@@ -851,7 +859,7 @@
 	cam_cci0: qcom,cci0@ac13000 {
 		cell-index = <0>;
 		compatible = "qcom,cci", "simple-bus";
-		reg = <0xac13000 0x1000>;
+		reg = <0x0 0xac13000 0x0 0x1000>;
 		reg-names = "cci";
 		reg-cam-base = <0x13000>;
 		interrupt-names = "CCI0";
@@ -946,7 +954,7 @@
 	cam_cci1: qcom,cci1@ac14000 {
 		cell-index = <1>;
 		compatible = "qcom,cci", "simple-bus";
-		reg = <0xac14000 0x1000>;
+		reg = <0x0 0xac14000 0x0 0x1000>;
 		reg-names = "cci";
 		reg-cam-base = <0x14000>;
 		interrupt-names = "CCI1";
@@ -1041,7 +1049,7 @@
 	cam_cci2: qcom,cci2@ac15000 {
 		cell-index = <2>;
 		compatible = "qcom,cci", "simple-bus";
-		reg = <0xac15000 0x1000>;
+		reg = <0x0 0xac15000 0x0 0x1000>;
 		reg-names = "cci";
 		reg-cam-base = <0x15000>;
 		interrupt-names = "CCI2";
@@ -1136,7 +1144,7 @@
 	cam_cci3: qcom,cci3@ac16000 {
 		cell-index = <3>;
 		compatible = "qcom,cci", "simple-bus";
-		reg = <0xac16000 0x1000>;
+		reg = <0x0 0xac16000 0x0 0x1000>;
 		reg-names = "cci";
 		reg-cam-base = <0x16000>;
 		interrupt-names = "CCI3";
